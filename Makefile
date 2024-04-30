@@ -6,7 +6,7 @@ RM = rm -f
 
 LIBFT = ./libft/libft.a
 
-SRCS = main.c mlx.c
+SRCS = main.c graphic.c \
 OBJ = $(SRCS:.c=.o)
 
 all: $(NAME)
@@ -22,8 +22,8 @@ $(NAME): $(OBJ) $(LIBFT)
 
 clean:
 	$(MAKE) clean -C ./libft
-	rm $(OBJ)
 	make -C mlx clean
+	rm $(OBJ)
 
 fclean: clean
 	$(MAKE) fclean -C ./libft
