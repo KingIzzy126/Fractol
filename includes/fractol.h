@@ -6,7 +6,7 @@
 /*   By: ialashqa <ialashqa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 14:29:47 by ialashqa          #+#    #+#             */
-/*   Updated: 2024/04/30 15:13:20 by ialashqa         ###   ########.fr       */
+/*   Updated: 2024/04/30 17:51:54 by ialashqa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include "../libft/libft.h"
 # include "../mlx/mlx.h"
 # include <unistd.h>
+# include <math.h>
 
 typedef struct s_data
 {

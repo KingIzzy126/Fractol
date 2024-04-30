@@ -6,7 +6,7 @@ RM = rm -f
 
 LIBFT = ./libft/libft.a
 
-SRCS = main.c
+SRCS = mlx.c
 OBJ = $(SRCS:.c=.o)
 
 all: $(NAME)
