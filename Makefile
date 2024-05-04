@@ -5,8 +5,9 @@ CFLAGS = -Wall -Wextra -Werror
 RM = rm -f
 
 LIBFT = ./libft/libft.a
+MLX = ./mlx
 
-SRCS = main.c graphic.c \
+SRCS = graphic.c run.c
 OBJ = $(SRCS:.c=.o)
 
 all: $(NAME)
@@ -14,20 +15,23 @@ all: $(NAME)
 $(LIBFT): 
 	$(MAKE) -C ./libft
 
-$(NAME): $(OBJ) $(LIBFT)
-	$(CC) $(OBJ) $(LIBFT) -Lmlx -lmlx -framework OpenGL -framework AppKit -o $(NAME)
+mlx_compiled:
+	$(MAKE) -C $(MLX)
+
+$(NAME): mlx_compiled $(OBJ) $(LIBFT)
+	$(CC) $(OBJ) $(LIBFT) -L$(MLX) -lmlx -framework OpenGL -framework AppKit -o $(NAME)
 
 %.o: %.c
-	$(CC) $(CFLAGS) -Imlx -c $< -o $@
+	$(CC) $(CFLAGS) -I$(MLX) -c $< -o $@
 
 clean:
 	$(MAKE) clean -C ./libft
-	make -C mlx clean
-	rm $(OBJ)
+	$(MAKE) clean -C $(MLX)
+	$(RM) $(OBJ)
 
 fclean: clean
 	$(MAKE) fclean -C ./libft
-	rm $(NAME)
+	$(RM) $(NAME)
 
 re: fclean all
 
