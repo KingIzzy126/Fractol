@@ -5,24 +5,25 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ialashqa <ialashqa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/30 17:39:20 by ialashqa          #+#    #+#             */
-/*   Updated: 2024/04/30 18:15:14 by ialashqa         ###   ########.fr       */
+/*   Created: 2024/05/30 14:38:08 by ialashqa          #+#    #+#             */
+/*   Updated: 2024/06/03 14:57:24 by ialashqa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fractol.h"
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-    if ((2 == argc && !ft_strncmp(argv[1], "mandelbrot", 10)) 
-        || (4 == argc && !ft_strncmp(argv[1], "julia", 5)))
-    {
-     //run evrything   
-    }
-    else
-    {
-        ft_putstr_fd("Format: ./fractol mandelbrot or \n", STDERR_FILENO);
-        ft_putstr_fd("./fractol julia <value_1> <value_2>\n", STDERR_FILENO);
-        return (1);
-    }
+	t_fractol	*fract;
+
+	fract = (t_fractol *)malloc(sizeof(t_fractol));
+	if (!fract)
+		return (0);
+	if (!select_fractol(argc, argv, fract))
+		return (1);
+	mlx_hook(fract->win, 2, 1L << 0, press_key, fract);
+	mlx_hook(fract->win, 17, 1L << 17, close_window, fract);
+	mlx_mouse_hook(fract->win, handle_mouse, fract);
+	mlx_loop(fract->mlx);
+	return (0);
 }

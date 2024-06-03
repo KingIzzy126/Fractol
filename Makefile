@@ -7,7 +7,7 @@ RM = rm -f
 LIBFT = ./libft/libft.a
 MLX = ./mlx
 
-SRCS = graphic.c run.c
+SRCS = main.c render.c args.c setup_fractals.c events.c
 OBJ = $(SRCS:.c=.o)
 
 all: $(NAME)
@@ -19,7 +19,7 @@ mlx_compiled:
 	$(MAKE) -C $(MLX)
 
 $(NAME): mlx_compiled $(OBJ) $(LIBFT)
-	$(CC) $(OBJ) $(LIBFT) -L$(MLX) -lmlx -framework OpenGL -framework AppKit -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJ) $(LIBFT) -L$(MLX) -lmlx -framework OpenGL -framework AppKit -o $(NAME)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -I$(MLX) -c $< -o $@
