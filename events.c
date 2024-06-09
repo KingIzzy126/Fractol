@@ -6,12 +6,11 @@
 /*   By: ialashqa <ialashqa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 14:58:21 by ialashqa          #+#    #+#             */
-/*   Updated: 2024/06/03 15:18:40 by ialashqa         ###   ########.fr       */
+/*   Updated: 2024/06/09 23:57:46 by ialashqa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fractol.h"
-
 
 int	close_window(t_fractol *fract)
 {
@@ -24,7 +23,7 @@ int	close_window(t_fractol *fract)
 int	press_key(int key, t_fractol *fract)
 {
 	double	shift_amount;
-	
+
 	shift_amount = 0.1 / fract->zoom;
 	if (key == 53)
 		close_window(fract);
@@ -36,9 +35,14 @@ int	press_key(int key, t_fractol *fract)
 		fract->center_y -= shift_amount;
 	else if (key == 125)
 		fract->center_y += shift_amount;
+	else if (key == 18)
+		fract->color_func = get_color_blue;
+	else if (key == 19)
+		fract->color_func = get_color_purple;
+	else if (key == 20)
+		fract->color_func = get_color_pink;
 	fractol_render(fract);
-	return(0);
-	
+	return (0);
 }
 
 int	handle_mouse(int button, int x, int y, t_fractol *fract)

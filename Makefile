@@ -7,7 +7,7 @@ RM = rm -f
 LIBFT = ./libft/libft.a
 MLX = ./mlx
 
-SRCS = main.c render.c args.c setup_fractals.c events.c
+SRCS = main.c render.c args.c setup_fractals.c events.c color.c
 OBJ = $(SRCS:.c=.o)
 
 all: $(NAME)

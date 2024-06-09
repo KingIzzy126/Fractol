@@ -6,7 +6,7 @@
 /*   By: ialashqa <ialashqa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 14:09:46 by ialashqa          #+#    #+#             */
-/*   Updated: 2024/06/03 11:41:40 by ialashqa         ###   ########.fr       */
+/*   Updated: 2024/06/09 23:57:28 by ialashqa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,21 +52,24 @@ int	julia_func(t_fractol *fract, double cr, double ci)
 	return (iter);
 }
 
-unsigned int	get_color(int iteration, t_fractol *fract)
+int	burning_ship_func(t_fractol *fract, double cr, double ci)
 {
-	int	blue;
-	int	green;
-	int	red;
+	double	zr;
+	double	zi;
+	double	temp;
+	int		iter;
 
-	if (iteration == fract->max_iterations)
-		return (0x000000);
-	else
+	zr = 0.0;
+	zi = 0.0;
+	iter = 0;
+	while (zr * zr + zi * zi < 4 && iter < fract->max_iterations)
 	{
-		blue = (iteration * iteration) % 256;
-        green = (iteration * iteration) % 256;
-		red = 0;
-		return ((red << 16) | (green << 8) | blue);
+		temp = zr * zr - zi * zi + cr;
+		zi = fabs(2 * zr * zi) + ci;
+		zr = fabs(temp);
+		iter++;
 	}
+	return (iter);
 }
 
 void	get_complex_map(int x, int y, t_fractol *fract)
@@ -77,8 +80,10 @@ void	get_complex_map(int x, int y, t_fractol *fract)
 	unsigned int	color;
 	int				pos;
 
-	cr = fract->min_real + (x / (double)WIDTH) * (fract->max_real - fract->min_real) / fract->zoom + fract->center_x;
-	ci = fract->min_imag + (y / (double)HEIGHT) * (fract->max_imag - fract->min_imag) / fract->zoom + fract->center_y;
+	cr = fract->min_real + (x / (double)WIDTH) * (fract->max_real
+			- fract->min_real) / fract->zoom + fract->center_x;
+	ci = fract->min_imag + (y / (double)HEIGHT) * (fract->max_imag
+			- fract->min_imag) / fract->zoom + fract->center_y;
 	iter = fract->fractol_func(fract, cr, ci);
 	color = fract->color_func(iter, fract);
 	pos = y * fract->line_length + x * (fract->bpp / 8);

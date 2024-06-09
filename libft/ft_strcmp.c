@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ismailalashqar <ismailalashqar@student.    +#+  +:+       +#+        */
+/*   By: ialashqa <ialashqa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/02 15:17:41 by ismailalash       #+#    #+#             */
-/*   Updated: 2024/06/02 15:17:58 by ismailalash      ###   ########.fr       */
+/*   Updated: 2024/06/09 23:59:22 by ialashqa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
