@@ -6,7 +6,7 @@
 /*   By: ialashqa <ialashqa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 14:29:47 by ialashqa          #+#    #+#             */
-/*   Updated: 2024/06/09 23:58:21 by ialashqa         ###   ########.fr       */
+/*   Updated: 2024/06/10 00:03:45 by ialashqa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,6 @@ int					handle_mouse(int button, int x, int y, t_fractol *fract);
 // color.c
 unsigned int		get_color_blue(int iteration, t_fractol *fract);
 unsigned int		get_color_pink(int iteration, t_fractol *fract);
-unsigned int		get_color_purple(int iteration, t_fractol *fract);
+unsigned int		get_color_orange(int iteration, t_fractol *fract);
 
 #endif

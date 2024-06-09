@@ -6,7 +6,7 @@
 /*   By: ialashqa <ialashqa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 14:58:21 by ialashqa          #+#    #+#             */
-/*   Updated: 2024/06/09 23:57:46 by ialashqa         ###   ########.fr       */
+/*   Updated: 2024/06/10 00:03:32 by ialashqa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,9 @@ int	press_key(int key, t_fractol *fract)
 	else if (key == 18)
 		fract->color_func = get_color_blue;
 	else if (key == 19)
-		fract->color_func = get_color_purple;
-	else if (key == 20)
 		fract->color_func = get_color_pink;
+	else if (key == 20)
+		fract->color_func = get_color_orange;
 	fractol_render(fract);
 	return (0);
 }

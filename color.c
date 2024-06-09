@@ -6,7 +6,7 @@
 /*   By: ialashqa <ialashqa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/09 22:53:02 by ialashqa          #+#    #+#             */
-/*   Updated: 2024/06/09 23:58:08 by ialashqa         ###   ########.fr       */
+/*   Updated: 2024/06/10 00:07:42 by ialashqa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ unsigned int	get_color_blue(int iteration, t_fractol *fract)
 	}
 }
 
-unsigned int	get_color_purple(int iteration, t_fractol *fract)
+unsigned int	get_color_pink(int iteration, t_fractol *fract)
 {
 	int	blue;
 	int	green;
@@ -46,7 +46,7 @@ unsigned int	get_color_purple(int iteration, t_fractol *fract)
 	}
 }
 
-unsigned int	get_color_pink(int iteration, t_fractol *fract)
+unsigned int	get_color_orange(int iteration, t_fractol *fract)
 {
 	int	blue;
 	int	green;
@@ -56,9 +56,9 @@ unsigned int	get_color_pink(int iteration, t_fractol *fract)
 		return (0x000000);
 	else
 	{
-		blue = (iteration * iteration) % 256;
+		blue = (iteration * iteration) % 64;
 		green = (iteration * iteration) % 128;
-		red = (iteration * iteration) % 256;
+		red = (iteration * iteration) % 255;
 		return ((red << 16) | (green << 8) | blue);
 	}
 }
