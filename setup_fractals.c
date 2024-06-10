@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   setup_fractals.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ialashqa <ialashqa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ismailalashqar <ismailalashqar@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/26 19:30:24 by ialashqa          #+#    #+#             */
-/*   Updated: 2024/06/10 00:12:06 by ialashqa         ###   ########.fr       */
+/*   Updated: 2024/06/10 01:52:33 by ismailalash      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,7 @@ void	setup_julia3(t_fractol *fract)
 
 void	setup_burning_ship(t_fractol *fract)
 {
-	fract->max_iterations = 100;
+	fract->max_iterations = 250;
 	fract->min_real = -2.0;
 	fract->max_real = 2.0;
 	fract->min_imag = -2.0;

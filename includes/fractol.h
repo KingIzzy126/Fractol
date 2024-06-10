@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fractol.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ialashqa <ialashqa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ismailalashqar <ismailalashqar@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 14:29:47 by ialashqa          #+#    #+#             */
-/*   Updated: 2024/06/10 00:03:45 by ialashqa         ###   ########.fr       */
+/*   Updated: 2024/06/10 02:19:45 by ismailalash      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,10 +69,12 @@ int					select_julia(char **argv, t_fractol *fract);
 int					close_window(t_fractol *fract);
 int					press_key(int key, t_fractol *fract);
 int					handle_mouse(int button, int x, int y, t_fractol *fract);
+void				reset_fractal_center(t_fractol *fract);
 
 // color.c
 unsigned int		get_color_blue(int iteration, t_fractol *fract);
 unsigned int		get_color_pink(int iteration, t_fractol *fract);
-unsigned int		get_color_orange(int iteration, t_fractol *fract);
+unsigned int 		get_color_gold(int iteration, t_fractol *fract);
+unsigned int		get_color_fiesta(int iteration, t_fractol *fract);
 
 #endif
