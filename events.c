@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   events.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ismailalashqar <ismailalashqar@student.    +#+  +:+       +#+        */
+/*   By: ialashqa <ialashqa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 14:58:21 by ialashqa          #+#    #+#             */
-/*   Updated: 2024/06/10 02:24:28 by ismailalash      ###   ########.fr       */
+/*   Updated: 2024/06/12 13:46:27 by ialashqa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,11 @@ int	press_key(int key, t_fractol *fract)
 	else if (key == 19)
 		fract->color_func = get_color_pink;
 	else if (key == 21)
-    	fract->color_func = get_color_gold;
+		fract->color_func = get_color_gold;
 	else if (key == 20)
 		fract->color_func = get_color_fiesta;
 	else if (key == 15)
-        reset_fractal_center(fract);
+		reset_fractal_center(fract);
 	fractol_render(fract);
 	return (0);
 }
@@ -67,10 +67,9 @@ int	handle_mouse(int button, int x, int y, t_fractol *fract)
 	return (0);
 }
 
-void reset_fractal_center(t_fractol *fract) 
+void	reset_fractal_center(t_fractol *fract)
 {
-    fract->center_x = 0.0;
-    fract->center_y = 0.0;
-
-    fractol_render(fract);
+	fract->center_x = 0.0;
+	fract->center_y = 0.0;
+	fractol_render(fract);
 }

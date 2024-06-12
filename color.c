@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   color.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ismailalashqar <ismailalashqar@student.    +#+  +:+       +#+        */
+/*   By: ialashqa <ialashqa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/09 22:53:02 by ialashqa          #+#    #+#             */
-/*   Updated: 2024/06/10 02:17:12 by ismailalash      ###   ########.fr       */
+/*   Updated: 2024/06/12 13:46:07 by ialashqa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,11 @@ unsigned int	get_color_pink(int iteration, t_fractol *fract)
 	int	red;
 
 	if (iteration == fract->max_iterations)
-        return 0x000000;
-
-    red = (int)(255 * (double)iteration / fract->max_iterations);
-    green = 0;
-    blue = (int)(255 * (double)iteration / fract->max_iterations);
-
-    return ((red << 16) | (green << 8) | blue);
+		return (0x000000);
+	red = (int)(255 * (double)iteration / fract->max_iterations);
+	green = 0;
+	blue = (int)(255 * (double)iteration / fract->max_iterations);
+	return ((red << 16) | (green << 8) | blue);
 }
 
 unsigned int	get_color_fiesta(int iteration, t_fractol *fract)
@@ -62,17 +60,16 @@ unsigned int	get_color_fiesta(int iteration, t_fractol *fract)
 	}
 }
 
-unsigned int get_color_gold(int iteration, t_fractol *fract)
+unsigned int	get_color_gold(int iteration, t_fractol *fract)
 {
-    int red, green, blue;
+	int	red;
+	int	green;
+	int	blue;
 
-    if (iteration == fract->max_iterations)
-        return 0x000000;
-
-    red = (int)(255 * (double)iteration / fract->max_iterations);
-    green = (int)(215 * (double)iteration / fract->max_iterations);
-    blue = (int)(0.0 * (double)iteration / fract->max_iterations);
-
-    return ((red << 16) | (green << 8) | blue);
+	if (iteration == fract->max_iterations)
+		return (0x000000);
+	red = (int)(255 * (double)iteration / fract->max_iterations);
+	green = (int)(215 * (double)iteration / fract->max_iterations);
+	blue = (int)(0.0 * (double)iteration / fract->max_iterations);
+	return ((red << 16) | (green << 8) | blue);
 }
-
